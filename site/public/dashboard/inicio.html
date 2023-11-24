@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Implementando ChartJS</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="../css/inicio.css">
+</head>
+
+<body style="display: flex;">
+  <div>
+    <canvas id="myChart" class="chart-container" style=" height:40vh; width:45vw; display: flex;"></canvas>
+  </div>
+
+  <div class="voto">
+     <button></button>
+  </div>
+
+
+</body>
+
+</html>
+<script>
+
+
+  const labels = [
+    'Muralha da China',
+    'Coliseu',
+    'Cristo Redentor',
+    'Machu Pichu',
+    'Chichén Itzá',
+    'Petra',
+    'Taj Mahal',
+    
+  ];
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'Porcentagem de votos',
+      backgroundColor: [
+        ' rgb(61, 96, 37)',
+        'rgba(88, 13, 13, 0.638)',
+        'rgb(21, 146, 195)',
+        'rgb(96, 94, 94)',
+        'burlywood',
+        'rgb(209, 128, 78)',
+        'yellow'
+
+      ],
+      data: [20, 30, 40, 50, 60, 70, 80],
+    }
+
+    ]
+  };
+
+
+
+  const config = {
+    type: 'polarArea',
+    data: data,
+    options: {}
+  };
+
+
+</script>
+
+<script>
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+
+
+</script>

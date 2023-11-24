@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#section2">Sobre mim</a></li>
+                    <li><a href="./cadastro.html">Cadastre-se</a></li>
+                    <li><a href="./login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h1>Descubra seu destino</h1>
+                <p>Conheça as maravilhas que o planeta terra tem a oferecer.</p>
+                <!-- <button type="button">Explorar</button> -->
+            </div>
+
+            <div class="col"></div>
+        </div>
+    </div>
+
+<div class="inicio">
+
+</div>
+
+
+
+    <div class="explorar">
+       
+        <button class="tablink" onclick="openPage('China', this )">Muralha da China</button>
+        <button class="tablink" onclick="openPage('Coliseu', this )" id="defaultOpen">Coliseu</button>
+        <button class="tablink" onclick="openPage('TajMahal', this)">Taj Mahal</button>
+        <button class="tablink" onclick="openPage('MachuPichu', this)">Machu Pichu</button>
+        <button class="tablink" onclick="openPage('RiodeJaneiro', this)">Cristo Redentor</button>
+        <button class="tablink" onclick="openPage('Mexico', this)">Mexico</button>
+        <button class="tablink" onclick="openPage('Petra', this)">Petra</button>
+
+       
+
+        <div id="China" class="tabcontent">
+            <a class="bot" href="./telapaises/telachina.html">Quero conhecer</a>
+            
+        </div>
+
+
+        <div id="Coliseu" class="tabcontent">
+            <a class="bot" href="./telapaises/telacoliseu.html">Quero conhecer</a>
+        </div>
+
+        <div id="TajMahal" class="tabcontent">
+            <a class="bot" href="./telapaises/telataj.html">Quero conhecer</a>
+        </div>
+
+        <div id="MachuPichu" class="tabcontent">
+            <a class="bot" href="./telapaises/telamachu.html">Quero conhecer</a>
+        </div>
+
+        <div id="RiodeJaneiro" class="tabcontent">
+            <a class="bot" href="./telapaises/telacristo.html">Quero conhecer</a>
+        </div>
+
+        <div id="Mexico" class="tabcontent">
+            <a class="bot" href="./telapaises/telamexico.html">Quero conhecer</a>
+        </div>
+
+        <div id="Petra" class="tabcontent">
+            <a class="bot" href="./telapaises/telapetra.html">Quero conhecer</a>
+        </div>
+    </div>
+
+
+
+    <footer class="footer" id="section2">
+        <div class="imgmy">
+            <img src="./assets/airplane_airplane_wing_metal_168961_1080x1920.jpg" alt="" class="foto">
+        </div>
+
+        <div class="sobremim">
+            <p>Me chamo Pedro, tenho 19 anos e estou cursando o primeiro semestre de Análise e Desenvolvimento de Sistemas na SPTech. Apresento meu projeto individual, que consiste em um guia de viagem das Sete Maravilhas do Mundo Moderno. Este trabalho foi elaborado com base nos conhecimentos adquiridos ao longo das disciplinas do curso, representando uma síntese do aprendizado até o momento.
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
+<script>
+    function openPage(pageName, elmnt, color) {
+        // Hide all elements with class="tabcontent" by default */
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Remove the background color of all tablinks/buttons
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+
+        // Show the specific tab content
+        document.getElementById(pageName).style.display = "block";
+
+        // Add the specific color to the button used to open the tab content
+        elmnt.style.backgroundColor = color;
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+
+
+
+
+</script>
