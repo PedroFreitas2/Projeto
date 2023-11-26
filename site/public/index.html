@@ -31,14 +31,14 @@
         </div>
     </div>
 
-<div class="inicio">
+    <div class="inicio">
 
-</div>
+    </div>
 
 
 
     <div class="explorar">
-       
+
         <button class="tablink" onclick="openPage('China', this )">Muralha da China</button>
         <button class="tablink" onclick="openPage('Coliseu', this )" id="defaultOpen">Coliseu</button>
         <button class="tablink" onclick="openPage('TajMahal', this)">Taj Mahal</button>
@@ -47,36 +47,36 @@
         <button class="tablink" onclick="openPage('Mexico', this)">Mexico</button>
         <button class="tablink" onclick="openPage('Petra', this)">Petra</button>
 
-       
+
 
         <div id="China" class="tabcontent">
-            <a class="bot" href="./telapaises/telachina.html">Quero conhecer</a>
-            
+            <a id="conhecer" class="bot" href="./telapaises/telachina.html">Quero conhecer</a>
+
         </div>
 
 
         <div id="Coliseu" class="tabcontent">
-            <a class="bot" href="./telapaises/telacoliseu.html">Quero conhecer</a>
+            <a id="conhecer2" class="bot" href="./telapaises/telacoliseu.html">Quero conhecer</a>
         </div>
 
         <div id="TajMahal" class="tabcontent">
-            <a class="bot" href="./telapaises/telataj.html">Quero conhecer</a>
+            <a id="conhecer3" class="bot" href="./telapaises/telataj.html">Quero conhecer</a>
         </div>
 
         <div id="MachuPichu" class="tabcontent">
-            <a class="bot" href="./telapaises/telamachu.html">Quero conhecer</a>
+            <a id="conhecer4" class="bot" href="./telapaises/telamachu.html">Quero conhecer</a>
         </div>
 
         <div id="RiodeJaneiro" class="tabcontent">
-            <a class="bot" href="./telapaises/telacristo.html">Quero conhecer</a>
+            <a id="conhecer5" class="bot" href="./telapaises/telacristo.html">Quero conhecer</a>
         </div>
 
         <div id="Mexico" class="tabcontent">
-            <a class="bot" href="./telapaises/telamexico.html">Quero conhecer</a>
+            <a id="conhecer6" class="bot" href="./telapaises/telamexico.html">Quero conhecer</a>
         </div>
 
         <div id="Petra" class="tabcontent">
-            <a class="bot" href="./telapaises/telapetra.html">Quero conhecer</a>
+            <a id="conhecer7" class="bot" href="./telapaises/telapetra.html">Quero conhecer</a>
         </div>
     </div>
 
@@ -88,7 +88,10 @@
         </div>
 
         <div class="sobremim">
-            <p>Me chamo Pedro, tenho 19 anos e estou cursando o primeiro semestre de Análise e Desenvolvimento de Sistemas na SPTech. Apresento meu projeto individual, que consiste em um guia de viagem das Sete Maravilhas do Mundo Moderno. Este trabalho foi elaborado com base nos conhecimentos adquiridos ao longo das disciplinas do curso, representando uma síntese do aprendizado até o momento.
+            <p>Me chamo Pedro, tenho 19 anos e estou cursando o primeiro semestre de Análise e Desenvolvimento de
+                Sistemas na SPTech. Apresento meu projeto individual, que consiste em um guia de viagem das Sete
+                Maravilhas do Mundo Moderno. Este trabalho foi elaborado com base nos conhecimentos adquiridos ao longo
+                das disciplinas do curso, representando uma síntese do aprendizado até o momento.
             </p>
         </div>
     </footer>
@@ -96,28 +99,39 @@
 
 </html>
 <script>
+
+    if (!sessionStorage.ID_USUARIO) {
+        conhecer.style.pointerEvents = "none",
+        conhecer2.style.pointerEvents = "none",
+        conhecer3.style.pointerEvents = "none",
+        conhecer4.style.pointerEvents = "none",
+        conhecer5.style.pointerEvents = "none",
+        conhecer6.style.pointerEvents = "none",
+        conhecer7.style.pointerEvents = "none"
+
+    }
+
     function openPage(pageName, elmnt, color) {
-        // Hide all elements with class="tabcontent" by default */
+
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
         for (i = 0; i < tabcontent.length; i++) {
             tabcontent[i].style.display = "none";
         }
 
-        // Remove the background color of all tablinks/buttons
+
         tablinks = document.getElementsByClassName("tablink");
         for (i = 0; i < tablinks.length; i++) {
             tablinks[i].style.backgroundColor = "";
         }
 
-        // Show the specific tab content
+
         document.getElementById(pageName).style.display = "block";
 
-        // Add the specific color to the button used to open the tab content
+
         elmnt.style.backgroundColor = color;
     }
 
-    // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultOpen").click();
 
 

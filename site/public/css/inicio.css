@@ -16,6 +16,7 @@
     border: none;
     margin-top: 90px;
     justify-content: space-between;
+    border-radius: 12px;
 }
 
 .dash {
@@ -30,30 +31,41 @@ button {
     border: none;
     border-radius: 12px;
     color: white;
-    width: 30%;
-    height: 8%;
     margin-top: 600px;
-    margin-left: 320px;
+    margin-left: 300px;
+    height: 7%;
+    width: 15%;
+   
 }
 
 button:hover {
     transition: 1s;
     color: black;
     background-color: white;
+    background-image: url(../assets/livro.webp);
 }
 
 img {
     display: flex;
     width: 200px;
     height: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
 
 }
 
 img:hover {
-    transform: scale(1.1);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.3);
+}
+input{
+    margin-top: 600px;
+    margin-right: 300px;
+    color: white;
+    height: 5%;
 }
 
-.fotos {
+/* .fotos {
     background-color: rgb(68, 68, 68);
     display: flex;
     justify-content: space-between;
@@ -62,4 +74,4 @@ img:hover {
     margin-left: 300px;
     flex-direction: row;
     height: 50vh;
-}
+} */

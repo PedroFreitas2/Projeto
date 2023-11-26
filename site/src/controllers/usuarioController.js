@@ -20,20 +20,20 @@ function autenticar(req, res) {
                     if (resultadoAutenticar.length == 1) {
                         console.log(resultadoAutenticar);
 
-                        aquarioModel.buscarAquariosPorEmpresa(resultadoAutenticar[0].empresaId)
-                            .then((resultadoAquarios) => {
-                                if (resultadoAquarios.length > 0) {
-                                    res.json({
-                                        id: resultadoAutenticar[0].id,
-                                        email: resultadoAutenticar[0].email,
-                                        nome: resultadoAutenticar[0].nome,
-                                        senha: resultadoAutenticar[0].senha,
-                                        aquarios: resultadoAquarios
-                                    });
-                                } else {
-                                    res.status(204).json({ aquarios: [] });
-                                }
-                            })
+
+
+                        if (resultadoAutenticar.length > 0) {
+                            res.json({
+                                idusuario: resultadoAutenticar[0].idusuario,
+                                email: resultadoAutenticar[0].email,
+                                nome: resultadoAutenticar[0].nome,
+                                senha: resultadoAutenticar[0].senha,
+                            
+                            });
+                        } else {
+                            res.status(204).json({ aquarios: [] });
+                        }
+
                     } else if (resultadoAutenticar.length == 0) {
                         res.status(403).send("Email e/ou senha inválido(s)");
                     } else {
@@ -89,6 +89,20 @@ function cadastrar(req, res) {
                 }
             );
     }
+}
+
+function dashboard(req, res) {
+    usuarioModel.grafico.dashboard.then(
+        function (resultadodashboard) {
+            console.log(`resultado: ${JASON.stringify(resultadodashboard)}`);
+            if (resultadodashboard.length > 0) {
+                console.log(resultadodashboard);
+                res.status(200).jason(resultadodashboard);
+            } else {
+                res.status(404).send("sua lista está vazia")
+            }
+        }
+    )
 }
 
 module.exports = {
