@@ -91,19 +91,7 @@ function cadastrar(req, res) {
     }
 }
 
-function dashboard(req, res) {
-    usuarioModel.grafico.dashboard.then(
-        function (resultadodashboard) {
-            console.log(`resultado: ${JASON.stringify(resultadodashboard)}`);
-            if (resultadodashboard.length > 0) {
-                console.log(resultadodashboard);
-                res.status(200).jason(resultadodashboard);
-            } else {
-                res.status(404).send("sua lista está vazia")
-            }
-        }
-    )
-}
+
 
 module.exports = {
     autenticar,

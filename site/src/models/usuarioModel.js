@@ -22,10 +22,7 @@ function cadastrar(nome, email, senha, endereco, telefone) {
     return database.executar(instrucao);
 }
 
-function dashboard(){
-    var instrucao = select * from
 
-}
 
 module.exports = {
     autenticar,

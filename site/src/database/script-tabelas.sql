@@ -131,3 +131,9 @@ email varchar (45),
 senha varchar (45),
 endereco varchar (100),
 telefone char(11));
+
+create table paisvoto(
+idpais int primary key auto_increment,
+pais varchar(45),
+fkuser int,
+constraint fkuser foreign key (fkuser) references usuario(idusuario));
