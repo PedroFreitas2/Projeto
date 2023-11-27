@@ -31,10 +31,10 @@ button {
     border: none;
     border-radius: 12px;
     color: white;
-    margin-top: 600px;
+    margin-top: 500px;
     margin-left: 300px;
     height: 7%;
-    width: 15%;
+    width: 20%;
    
 }
 
@@ -59,7 +59,7 @@ img:hover {
     transform: scale(1.3);
 }
 input{
-    margin-top: 600px;
+    margin-top: 500px;
     margin-right: 300px;
     color: white;
     height: 5%;

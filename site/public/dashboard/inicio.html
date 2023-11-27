@@ -25,13 +25,13 @@
       <img src="../assets/riodejaneiro.png" alt="">
     </div>
      -->
-    <button onclick="votar()">Registrar Voto</button>
-    <input type="text" placeholder="Insira o número do seu voto">
+    <button onclick="votar()">Registrar</button>
+    <input id="voto_input" type="text" placeholder="Insira seu voto">
 
 
   </div>
 
-
+  <div id="mostrar"></div>
 
 </body>
 
@@ -50,45 +50,18 @@
 
   ];
 
-  const data = {
-    labels: labels,
-    datasets: [{
-      label: 'Porcentagem de votos',
-      borderColor: 'white',
-      backgroundColor: [
-        ' rgb(61, 96, 37)',
-        'rgba(88, 13, 13, 0.638)',
-        'rgb(21, 146, 195)',
-        'rgb(96, 94, 94)',
-        'burlywood',
-        'rgb(209, 128, 78)',
-        'yellow'
-
-      ],
-      data: [20, 30, 40, 50, 60, 70, 80],
-    }
-
-    ]
-  };
+  
 
 
 
-  const config = {
-    type: 'polarArea',
-    data: data,
-    options: {}
-  };
+ 
 
 
 </script>
 
 <script>
 
-  const myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-  );
-
+  
 
 
 </script>
@@ -105,21 +78,19 @@
 
   //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
   //     Para ajustar o "select", ajuste o comando sql em src/models
-  function obterDadosGrafico(idpaisvoto) {
+  
 
-    alterarTitulo(idpaisvoto)
+    // alterarTitulo(iduser)
 
-    if (proximaAtualizacao != undefined) {
-      clearTimeout(proximaAtualizacao);
-    }
+    
 
-    fetch(`/medidas/ultimas/${idpaisvoto}`, { cache: 'no-store' }).then(function (response) {
+    fetch(`/medidas/ultimas/${sessionStorage.getItem("ID_USUARIO")}`, { cache: 'no-store' }).then(function (response) {
       if (response.ok) {
         response.json().then(function (resposta) {
           console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
           resposta.reverse();
 
-          plotarGrafico(resposta, idpaisvoto);
+          plotarGrafico(resposta);
 
         });
       } else {
@@ -129,79 +100,147 @@
       .catch(function (error) {
         console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
       });
-  }
+  
 
   // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
   // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
   // A função *plotarGrafico* também invoca a função *atualizarGrafico*
-  function plotarGrafico(resposta, idpaisvoto) {
+  function plotarGrafico(resposta) {
+var listavoto = [];
+var listalocal = [];
 
+for(var i =  0; i<resposta.length; i ++){
+  var voto = resposta[i].local;
+  var monumento = resposta[i].pais;
+  listalocal.push(monumento);
+  listavoto.push(voto)
+}
     console.log('iniciando plotagem do gráfico...');
 
     // Criando estrutura para plotar gráfico - labels
-    let labels = [];
+    
 
     // Criando estrutura para plotar gráfico - dados
-    let dados = {
-      labels: labels,
-      datasets: [{
-        label: 'Umidade',
-        data: [],
-        fill: false,
-        borderColor: 'rgb(75, 192, 192)',
-        tension: 0.1
-      },
-      {
-        label: 'Temperatura',
-        data: [],
-        fill: false,
-        borderColor: 'rgb(199, 52, 52)',
-        tension: 0.1
-      }]
-    };
+    const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+  type: 'polarArea',
+  data: {
+    labels: listalocal,
+    datasets: [{
+      label: '# of Votes',
+      data: listavoto,
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+
+
 
     console.log('----------------------------------------------')
     console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
     console.log(resposta)
 
     // Inserindo valores recebidos em estrutura para plotar o gráfico
-    for (i = 0; i < resposta.length; i++) {
-      var registro = resposta[i];
-      labels.push(registro.momento_grafico);
-      dados.datasets[0].data.push(registro.umidade);
-      dados.datasets[1].data.push(registro.temperatura);
-    }
+    // for (i = 0; i < resposta.length; i++) {
+    //   var registro = resposta[i];
+    //   labels.push(registro.momento_grafico);
+    //   dados.datasets[0].data.push(registro.umidade);
+    //   dados.datasets[1].data.push(registro.temperatura);
+    // }
 
     console.log('----------------------------------------------')
     console.log('O gráfico será plotado com os respectivos valores:')
     console.log('Labels:')
     console.log(labels)
     console.log('Dados:')
-    console.log(dados.datasets)
+    // console.log(dados.datasets)
     console.log('----------------------------------------------')
 
-    // Criando estrutura para plotar gráfico - config
-    // const config = {
-    //   type: 'line',
-    //   data: dados,
-    // };
+    // Criando estrutura para plotar gráfico - confi
 
-    const config = {
-    type: 'polarArea',
-    data: data,
-    options: {}
-  };
 
     // Adicionando gráfico criado em div na tela
-    let myChart = new Chart(
-      document.getElementById(`myChartCanvas${idpaisvoto}`),
-      config
-    );
-
-    setTimeout(() => atualizarGrafico(idpaisvoto, dados, myChart), 2000);
+    // setTimeout(() => atualizarGrafico(idpaisvoto, dados, myChart), 2000);
   }
 
 
- 
- 
+
+
+</script>
+<script>
+  function votar() {
+
+   
+
+
+    // aguardar();
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var votoVar = voto_input.value;
+
+    if (
+      votoVar == ""
+
+    ) { alert("Preencha ocampos") }
+    // cardErro.style.display = "block";
+    // mensagem_erro.innerHTML =
+    //   "(Mensagem de erro para todos os campos em branco)";
+
+    //   finalizarAguardar();
+    //   return false;
+    // } else {
+    //   setInterval(sumirMensagem, 5000);
+    // }
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/votar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        votoServer: votoVar,
+
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          // cardErro.style.display = "block";
+
+          mensagem_erro.innerHTML =
+            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+          setTimeout(() => {
+            window.location = "login.html";
+          }, "2000");
+
+          limparFormulario();
+          // finalizarAguardar();
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        // finalizarAguardar();
+      });
+
+    return false;
+
+
+  }
+
 </script>

@@ -22,9 +22,18 @@ function cadastrar(nome, email, senha, endereco, telefone) {
     return database.executar(instrucao);
 }
 
+function votar(voto){
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", voto)
 
+    var instrucao = `
+    INSERT INTO paisvoto (pais) VALUES ('${voto}');
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
 
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    votar
 };
