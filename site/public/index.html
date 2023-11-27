@@ -9,17 +9,19 @@
 </head>
 
 <body>
+
     <div class="container">
         <div class="navbar">
             <img src="" class="logo">
             <nav>
                 <ul>
-                    <li><a href="#section2">Sobre mim</a></li>
                     <li><a href="./cadastro.html">Cadastre-se</a></li>
+                    <li><a href="#section2">Sobre mim</a></li>
                     <li><a href="./login.html">Login</a></li>
                 </ul>
             </nav>
         </div>
+
         <div class="row">
             <div class="col">
                 <h1>Descubra seu destino</h1>
@@ -31,22 +33,25 @@
         </div>
     </div>
 
+
     <div class="inicio">
 
+        <h4>Explore e <a href="./dashboard/inicio.html">vote</a> no seu favorito</h4>
+        
+      
     </div>
 
 
 
     <div class="explorar">
 
-        <button class="tablink" onclick="openPage('China', this )">Muralha da China</button>
         <button class="tablink" onclick="openPage('Coliseu', this )" id="defaultOpen">Coliseu</button>
+        <button class="tablink" onclick="openPage('China', this )">Muralha da China</button>
         <button class="tablink" onclick="openPage('TajMahal', this)">Taj Mahal</button>
         <button class="tablink" onclick="openPage('MachuPichu', this)">Machu Pichu</button>
         <button class="tablink" onclick="openPage('RiodeJaneiro', this)">Cristo Redentor</button>
         <button class="tablink" onclick="openPage('Mexico', this)">Mexico</button>
         <button class="tablink" onclick="openPage('Petra', this)">Petra</button>
-
 
 
         <div id="China" class="tabcontent">
@@ -78,15 +83,17 @@
         <div id="Petra" class="tabcontent">
             <a id="conhecer7" class="bot" href="./telapaises/telapetra.html">Quero conhecer</a>
         </div>
+
     </div>
 
 
 
     <footer class="footer" id="section2">
         <div class="imgmy">
-            <img src="./assets/airplane_airplane_wing_metal_168961_1080x1920.jpg" alt="" class="foto">
+            <img src="./assets/Imagem do WhatsApp de 2023-11-26 à(s) 21.11.08_3605b69c.jpg" alt="" class="foto">
         </div>
 
+        
         <div class="sobremim">
             <p>Me chamo Pedro, tenho 19 anos e estou cursando o primeiro semestre de Análise e Desenvolvimento de
                 Sistemas na SPTech. Apresento meu projeto individual, que consiste em um guia de viagem das Sete
@@ -94,7 +101,12 @@
                 das disciplinas do curso, representando uma síntese do aprendizado até o momento.
             </p>
         </div>
+
+        <div class="logo">
+            <img src="./assets/sptech_logo_negativa_1.png" class="foto2" alt="">
+        </div>
     </footer>
+
 </body>
 
 </html>
@@ -102,12 +114,12 @@
 
     if (!sessionStorage.ID_USUARIO) {
         conhecer.style.pointerEvents = "none",
-        conhecer2.style.pointerEvents = "none",
-        conhecer3.style.pointerEvents = "none",
-        conhecer4.style.pointerEvents = "none",
-        conhecer5.style.pointerEvents = "none",
-        conhecer6.style.pointerEvents = "none",
-        conhecer7.style.pointerEvents = "none"
+            conhecer2.style.pointerEvents = "none",
+            conhecer3.style.pointerEvents = "none",
+            conhecer4.style.pointerEvents = "none",
+            conhecer5.style.pointerEvents = "none",
+            conhecer6.style.pointerEvents = "none",
+            conhecer7.style.pointerEvents = "none"
 
     }
 

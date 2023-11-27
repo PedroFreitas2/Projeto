@@ -92,15 +92,66 @@ button {
 /*Header e banner*/
 
 /*inicio*/
-.inicio{
+.inicio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 50vh;
   width: 100%;
-  background-color: #000;
+  background-color: #000000;
+  color: white;
+  font-size: 200%;
+  flex-direction: column;
 }
+.inicio h4{
+  animation: appear 1ms ease-in-out;
+  animation-timeline: view();
+  animation-range: cover 0% cover 50%;
+}
+.inicio a {
+
+  text-decoration: none;
+  border: none;
+  border-radius: 12px;
+  color: rgb(255, 255, 255);
+  
+}
+a:hover {
+ transition: 1s;
+ color: rgb(255, 115, 0);
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    translate: -100vw 0;
+
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    clip-path: inset(45% 20% 45% 20%);
+  }
+
+  to {
+    opacity: 1;
+    clip-path: inset(0% 0% 0% 0%);
+  }
+}
+
 /*inicio*/
 
 /*Texto e cards*/
 .explorar {
+  
   width: 100%;
   height: 140vh;
 }
@@ -108,6 +159,9 @@ button {
 .bot {
   color: white;
   text-decoration: none;
+  margin-top: 70px;
+  font-size: 20px;
+  
 }
 
 
@@ -130,7 +184,7 @@ button {
   transition: 1s;
 }
 
-/* Style the tab content (and add height:100% for full page content) */
+
 .tabcontent {
   color: white;
   display: none;
@@ -188,35 +242,67 @@ button {
 }
 
 .foto {
-  border-radius: 15px 50px;
+  border-radius: 50%;
   margin-bottom: 2px;
+  width: 190px;
 }
 
 .imgmy {
   display: flex;
-  
   border: none;
   width: 50;
   height: 190px;
   margin-left: 200px;
   margin-top: 85px;
+  transition: all 0.5s;
+
 
 }
 
+.imgmy:hover {
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+}
+
 .sobremim {
-  width: 50%;
-  height: 100%;
+  width: 45%;
+  height: 80%;
   align-items: center;
   display: flex;
   justify-content: center;
   margin-right: 11%;
   line-height: 10px;
-  
+
 }
-.sobremim p{
-  font-size: 23px;
+
+.sobremim p {
+  font-size: 18px;
   line-height: 23px;
   font-family: sans-serif;
+  margin-right: 50px;
+  margin-left: 70px;
+  margin-top: 70px;
+
+}
+
+.foto2 {
+
+  height: 150px;
+  margin-right: 130px;
+  transition: all 0.5s;
+
+}
+
+.foto2:hover {
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+}
+
+.logo {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
