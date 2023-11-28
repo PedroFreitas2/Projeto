@@ -93,11 +93,13 @@ function cadastrar(req, res) {
 
 function votar(req, res) {
     var voto = req.body.votoServer;
+    var fkuser = req.body.fkuserServer;
+    
 
     if (voto == undefined) {
         res.status(400).send("Seu voto está undefined")
     } else {
-        usuarioModel.votar(voto)
+        usuarioModel.votar(voto, fkuser)
             .then(
                 function (resultado) {
                     res.json(resultado);

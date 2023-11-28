@@ -16,7 +16,7 @@ function buscarAquariosPorEmpresa(req, res) {
   });
 }
 
-
+  
 function cadastrar(req, res) {
   var descricao = req.body.descricao;
   var idUsuario = req.body.idUsuario;

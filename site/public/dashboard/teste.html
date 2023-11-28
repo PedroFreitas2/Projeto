@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Insira os filmes
+    <input type="text" id="input_voto"><br>
+    <button onclick="ver()">Cadastrar filme</button><br>
+    <div id="div_show"></div>
+
+</body>
+
+</html>
+<script>
+    var listavoto = []
+    function ver() {
+        listavoto.push(input_voto.value)
+        var posicao2 = listavoto[1]
+        var posicao3 = listavoto[2]
+
+
+        for (var contador = 0; contador < listavoto.length; contador++) {
+            if (listavoto.length < 3) {
+                posicao2 = `Esse local não existe`
+                posicao3 = `Esse filme não existe`
+            }
+            div_show.innerHTML = `Seu filme favorito: ${listavoto[0]}
+
+            Seu 2° local favorito é: ${listavoto[1]}
+
+ Seu 3º filme favorito: ${listavoto[2]}
+
+Total de filmes cadastrados: ${listavoto.length}`
+
+
+        }
+    }
+
+</script>

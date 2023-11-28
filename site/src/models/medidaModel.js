@@ -14,7 +14,7 @@ function buscarUltimasMedidas(iduser) {
     //                 where fk_aquario = ${idAquario}
     //                 order by id desc`;
     if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = ` select count(pais) as local, pais from paisvoto group by (pais);`;
+        instrucaoSql = ` select count(pais) as 'local', pais from paisvoto join usuario on fkuser = idusuario where idusuario = ${iduser} group by (pais);`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return

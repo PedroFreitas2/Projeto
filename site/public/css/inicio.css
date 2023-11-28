@@ -17,6 +17,8 @@
     margin-top: 90px;
     justify-content: space-between;
     border-radius: 12px;
+    color: white;
+    flex-wrap: wrap;
 }
 
 .dash {
@@ -47,10 +49,10 @@ button:hover {
 
 img {
     display: flex;
-    width: 200px;
-    height: 200px;
+    height: 100px;
+    height: 100px;
     transition: all 0.5s;
-    cursor: pointer;
+    
 
 }
 
@@ -65,13 +67,16 @@ input{
     height: 5%;
 }
 
-/* .fotos {
+.fotos {
     background-color: rgb(68, 68, 68);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
-    align-items: center;
-    margin-left: 300px;
-    flex-direction: row;
-    height: 50vh;
-} */
+   
+    
+} 
+
+.quadro{
+background-color: white;
+display: flex;
+}
