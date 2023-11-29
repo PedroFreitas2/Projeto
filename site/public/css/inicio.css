@@ -5,12 +5,13 @@
 
 .body {
     display: flex;
+    
 }
 
 .voto {
     background-color: rgb(68, 68, 68);
     width: 50%;
-    height: 80vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     border: none;
@@ -25,6 +26,7 @@
     display: flex;
     align-items: center;
     margin-top: 100px;
+    height: 90vh;
 }
 
 button {
@@ -34,9 +36,11 @@ button {
     border-radius: 12px;
     color: white;
     margin-top: 500px;
-    margin-left: 300px;
+    margin-left: 200px;
+    margin-right: 30px;
     height: 7%;
     width: 20%;
+    margin: 100px;
    
 }
 
@@ -52,6 +56,7 @@ img {
     height: 100px;
     height: 100px;
     transition: all 0.5s;
+    border-radius: 12px;
     
 
 }
@@ -61,10 +66,13 @@ img:hover {
     transform: scale(1.3);
 }
 input{
-    margin-top: 500px;
-    margin-right: 300px;
+
+    
+ 
+    margin-left: 50px;
     color: white;
     height: 5%;
+    margin: 100px;
 }
 
 .fotos {
@@ -72,11 +80,18 @@ input{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    align-items: center;
+    
+    height: 50%;
+    margin-bottom: 50px;
    
     
 } 
 
-.quadro{
-background-color: white;
-display: flex;
-}
+ /* .resultado{
+    width: 100%;
+    height: 20vh;
+    background-color: rgb(68, 68, 68);
+    display: flex;
+}  */
+

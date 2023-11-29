@@ -27,10 +27,17 @@
     </div>
 
     <button onclick="votar()">Registrar</button>
-
+    <button onclick="listar()">Listar Locais</button>
     <input id="voto_input" type="text" placeholder="Insira seu voto">
+    <input id="lista_input" type="text" placeholder="Liste seus votos">
 
 
+
+
+
+
+  </div>
+  <div class="resultado">
 
   </div>
 
@@ -246,5 +253,32 @@
 
 
   }
+
+</script>
+
+<script>
+   var listavoto = []
+    function listar() {
+        listavoto.push(lista_input.value)
+        var posicao2 = listavoto[1]
+        var posicao3 = listavoto[2]
+
+
+        for (var contador = 0; contador < listavoto.length; contador++) {
+            if (listavoto.length < 3) {
+                posicao2 = `Esse local não existe`
+                posicao3 = `Esse filme não existe`
+            }
+            div_show.innerHTML = `Seu filme favorito: ${listavoto[0]}
+
+            Seu 2° local favorito é: ${listavoto[1]}
+
+ Seu 3º filme favorito: ${listavoto[2]}
+
+Total de filmes cadastrados: ${listavoto.length}`
+
+
+        }
+    }
 
 </script>
