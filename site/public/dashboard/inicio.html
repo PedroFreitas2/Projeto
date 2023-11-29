@@ -10,7 +10,7 @@
 </head>
 
 <body style="display: flex;">
-  <div class="dash">
+  <div id="mostar" class="dash">
     <canvas id="myChart" class="chart-container" style=" height:40vh; width:45vw; display: flex;"></canvas>
   </div>
 
@@ -37,9 +37,9 @@
 
 
   </div>
-  <div class="resultado">
+  <!-- <div class="resultado">
 
-  </div>
+  </div> -->
 
 
 
@@ -269,7 +269,7 @@
                 posicao2 = `Esse local não existe`
                 posicao3 = `Esse filme não existe`
             }
-            div_show.innerHTML = `Seu filme favorito: ${listavoto[0]}
+            mostrar.innerHTML = `Seu filme favorito: ${listavoto[0]}
 
             Seu 2° local favorito é: ${listavoto[1]}
 

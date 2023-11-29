@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/lista.css">
+</head>
+
+<body>
+    <div class="listagem">
+        <button onclick="listar()">Listar
+        </button>
+        <input id="input_lista" type="text" placeholder="liste seus votos ">
+        <div class="resul" id="show">
+
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    var listavoto = []
+    // show.innerHTML = ``
+    function listar() {
+        listavoto.push(input_lista.value)
+        var posicao2 = listavoto[1]
+        var posicao3 = listavoto[2]
+
+
+        for (var contador = 0; contador < listavoto.length; contador++) {
+           
+            show.innerHTML = `Seu filme favorito: ${listavoto[0]}<br>
+            Seu 2° local favorito é: ${listavoto[1]}<br>
+
+ Seu 3º filme favorito: ${listavoto[2]}<br>
+
+Total de filmes cadastrados: ${listavoto.length}<br>`
+
+
+        }
+    }
+
+</script>

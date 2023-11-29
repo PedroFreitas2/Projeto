@@ -1,0 +1,47 @@
+body{
+    height: 40vh;
+    width: 90%;
+    background-color: black;
+    background-image: url(../assets/aviao.jpg);
+}
+.listagem{
+    display: flex;
+    align-items: center;
+    background-color: gray;
+    width: 90%;
+    height: 70vh;
+    margin-left: 100px;
+    justify-content: center;
+    margin-top: 100px;
+}
+button{
+    background-color: black;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    margin-top: 500px;
+    margin-left: 200px;
+    margin-right: 30px;
+    height: 7%;
+    width: 20%;
+    margin: 100px;
+   
+}
+button:hover {
+    transition: 1s;
+    color: black;
+    background-color: white;
+    background-image: url(../assets/livro.webp);
+}
+
+input{
+
+    
+    display: flex;
+    align-items: center;
+       margin-left: 50px;
+       color: white;
+       height: 5%;
+       margin: 100px;
+       background-color: black;
+   }
